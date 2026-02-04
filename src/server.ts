@@ -12,11 +12,16 @@ const PORT = process.env.PORT || 3333;
 connectDB();
 
 app.use(cors({
-  origin: true,
+  origin: [
+    "https://tech-focus-eight.vercel.app"
+  ],
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"]
 }));
+
+app.options("*", cors());
+
 
 app.use(express.json());
 app.use("/", routes);
