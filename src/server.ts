@@ -18,7 +18,7 @@ app.use(cors({
 connectDB();
 
 app.use(express.json());
-app.use("/api", routes);
+app.use("/", routes);
 
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
