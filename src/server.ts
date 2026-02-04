@@ -10,7 +10,7 @@ const app: Application = express();
 const PORT = process.env.PORT || 3333;
 
 app.use(cors({
-  origin: ["https://tech-focus-eight.vercel.app", "http://localhost:5173"],
+  origin: ["https://tech-focus-eight.vercel.app/"],
   methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
