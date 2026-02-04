@@ -9,17 +9,17 @@ dotenv.config();
 const app: Application = express();
 const PORT = process.env.PORT || 3333;
 
+connectDB();
+
 app.use(cors({
-  origin: ["https://tech-focus-eight.vercel.app"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
+  origin: "https://tech-focus-eight.vercel.app", 
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+  allowedHeaders: ["Content-Type", "Authorization"],
   credentials: true
 }));
 
-connectDB();
-
 app.use(express.json());
 app.use("/", routes);
-
 app.listen(PORT, () => {
   console.log(`🚀 Servidor rodando na porta ${PORT}`);
 });
