@@ -9,11 +9,7 @@ dotenv.config();
 const app: Application = express();
 const PORT = process.env.PORT || 3333;
 
-app.use(cors({
-  origin: ["https://tech-focus-eight.vercel.app/"],
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  credentials: true
-}));
+app.use(cors());
 
 connectDB();
 
